@@ -1,0 +1,3 @@
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/obj/Debug/netstandard1.0/dotnet-integration-kit.csproj.CoreCompileInputs.cache
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/obj/Debug/netstandard1.0/dotnet-integration-kit.AssemblyInfoInputs.cache
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/obj/Debug/netstandard1.0/dotnet-integration-kit.AssemblyInfo.cs

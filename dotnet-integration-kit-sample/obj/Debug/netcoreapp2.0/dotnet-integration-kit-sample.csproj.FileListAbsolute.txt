@@ -1,0 +1,13 @@
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit-sample.deps.json
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit-sample.runtimeconfig.json
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit-sample.runtimeconfig.dev.json
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit-sample.dll
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit-sample.pdb
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit.dll
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit.pdb
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.csprojResolveAssemblyReference.cache
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.csproj.CoreCompileInputs.cache
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.AssemblyInfoInputs.cache
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.AssemblyInfo.cs
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.dll
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.pdb

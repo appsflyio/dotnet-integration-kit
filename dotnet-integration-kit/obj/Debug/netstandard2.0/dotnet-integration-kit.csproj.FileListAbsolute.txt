@@ -1,0 +1,8 @@
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/bin/Debug/netstandard2.0/dotnet-integration-kit.deps.json
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/bin/Debug/netstandard2.0/dotnet-integration-kit.dll
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/bin/Debug/netstandard2.0/dotnet-integration-kit.pdb
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/obj/Debug/netstandard2.0/dotnet-integration-kit.csproj.CoreCompileInputs.cache
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/obj/Debug/netstandard2.0/dotnet-integration-kit.AssemblyInfoInputs.cache
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/obj/Debug/netstandard2.0/dotnet-integration-kit.AssemblyInfo.cs
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/obj/Debug/netstandard2.0/dotnet-integration-kit.dll
+/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/obj/Debug/netstandard2.0/dotnet-integration-kit.pdb
