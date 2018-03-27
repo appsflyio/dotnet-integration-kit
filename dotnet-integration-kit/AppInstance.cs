@@ -13,6 +13,8 @@ using System.Net.Http.Headers;
 
 namespace dotnet_integration_kit
 {
+    
+
     public class AppInstance
     {
         private AppInstance.AFConfig config;
@@ -37,11 +39,12 @@ namespace dotnet_integration_kit
 
         private string decrypt(string token, string secret)
         {
-            return Jose.JWT.Decode(token, Encoding.ASCII.GetBytes(secret), JwsAlgorithm.HS256);
+            dynamic obj = JsonConvert.DeserializeObject(Jose.JWT.Decode(token, Encoding.ASCII.GetBytes(secret), JwsAlgorithm.HS256));
+            return JsonConvert.SerializeObject(obj.af_claim);
 
         }
 
-        public void exec(string intent, object intentData, string userID, Action<string> callback)
+        public void exec(string intent, object intentData, string userID, Action<object> callback)
         {
             var obj = ((object)new
             {
@@ -61,6 +64,7 @@ namespace dotnet_integration_kit
             if (config.secretKey != null)
             {
                 token = encrypt(JsonConvert.SerializeObject(obj), config.secretKey);
+                client.DefaultRequestHeaders.Add("x-encrypted", "true");
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("text/plain"));
                 content = new StringContent(token, Encoding.UTF8, "text/plain");
             }
@@ -70,24 +74,32 @@ namespace dotnet_integration_kit
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                 content = new StringContent(token, Encoding.UTF8, "application/json");
             }
-            client.PostAsync(new Uri(this.config.repoUrl + "/executor/exec"), content).ContinueWith((requestTask) =>
+            var respose = client.PostAsync(new Uri(this.config.repoUrl + "/executor/exec"), content).ContinueWith((requestTask) =>
             {
                 HttpResponseMessage message = requestTask.Result;
                 if (message.IsSuccessStatusCode)
                 {
-                    string result = message.Content.ReadAsStringAsync().Result;
-                    callback(result);
-
+                    if (config.secretKey != null)
+                    {
+                        string result = message.Content.ReadAsStringAsync().Result;
+                        callback(JsonConvert.DeserializeObject(decrypt(result, config.secretKey)));
+                    }
+                    else
+                    {
+                        string result = message.Content.ReadAsStringAsync().Result;
+                        callback(JsonConvert.DeserializeObject(result));
+                    }
                 }
                 else
                 {
                     callback(null);
                 }
             });
+            respose.Wait();
         }
 
 
-        public string execSync(string intent, object intentData, string userID, Action<string> callback)
+        public object execSync(string intent, object intentData, string userID)
         {
             var obj = ((object)new
             {
@@ -107,6 +119,7 @@ namespace dotnet_integration_kit
             if (config.secretKey != null)
             {
                 token = encrypt(JsonConvert.SerializeObject(obj), config.secretKey);
+                client.DefaultRequestHeaders.Add("x-encrypted", "true");
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("text/plain"));
                 content = new StringContent(token, Encoding.UTF8, "text/plain");
             }
@@ -118,10 +131,20 @@ namespace dotnet_integration_kit
             }
 
             HttpResponseMessage messge = client.PostAsync(new Uri(this.config.repoUrl + "/executor/exec"), content).Result;
+
+
+
+
             if (messge.IsSuccessStatusCode)
             {
-                string result = messge.Content.ReadAsStringAsync().Result;
-                return result;
+                if (config.secretKey != null) {
+                    string result = messge.Content.ReadAsStringAsync().Result;
+                    return JsonConvert.DeserializeObject(decrypt(result, config.secretKey));
+                }
+                else {
+                    string result = messge.Content.ReadAsStringAsync().Result;
+                    return JsonConvert.DeserializeObject(result);
+                }
             }
             else{
                 return null;
