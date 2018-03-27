@@ -38,9 +38,9 @@ The DLL can be included to handle authorization. There is no need for you to han
 #### Setup DLL
 
 Add References
-###### Step 1. Add dll to your project references
+###### Step 1. Add [integration dll](https://github.com/appsflyio/dotnet-integration-kit/blob/master/dotnet-integration-kit/bin/Release/netstandard2.0/dotnet-integration-kit.dll) to your project references
 ```
-// [Integration DLL](https://github.com/appsflyio/dotnet-integration-kit/blob/master/dotnet-integration-kit/bin/Release/netstandard2.0/dotnet-integration-kit.dll) can be downloaded from this repo
+// Integration DLL can be downloaded from this repo
 ```
 
 ###### Step 2. Add the namespace "dotnet_integration_kit"
