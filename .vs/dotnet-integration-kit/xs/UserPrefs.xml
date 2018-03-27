@@ -1,15 +1,13 @@
 ﻿<Properties StartupConfiguration="{CB327138-2349-4130-96CB-4445B4936654}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="dotnet-integration-kit/AppInstance.cs">
     <Files>
-      <File FileName="dotnet-integration-kit/AppInstance.cs" Line="50" Column="23" />
-      <File FileName="dotnet-integration-kit-sample/Program.cs" Line="17" Column="16" />
+      <File FileName="dotnet-integration-kit/AppInstance.cs" Line="134" Column="44" />
+      <File FileName="dotnet-integration-kit-sample/Program.cs" Line="12" Column="116" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/AppInstance.cs" relfile="dotnet-integration-kit/AppInstance.cs" line="70" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.dotnet-integration-kit-sample PreferredExecutionTarget="MonoDevelop.Default" />

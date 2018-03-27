@@ -11,3 +11,16 @@
 /Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.AssemblyInfo.cs
 /Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.dll
 /Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.pdb
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit-sample.deps.json
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit-sample.runtimeconfig.json
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit-sample.runtimeconfig.dev.json
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit-sample.dll
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit-sample.pdb
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit.dll
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/bin/Debug/netcoreapp2.0/dotnet-integration-kit.pdb
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.csprojResolveAssemblyReference.cache
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.csproj.CoreCompileInputs.cache
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.AssemblyInfoInputs.cache
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.AssemblyInfo.cs
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.dll
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/obj/Debug/netcoreapp2.0/dotnet-integration-kit-sample.pdb

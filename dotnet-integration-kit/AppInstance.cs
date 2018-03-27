@@ -1,20 +1,11 @@
 ﻿using System;
-
-
-
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Jose;
 using System.Net.Http;
-using System.Net.Http.Headers;
-
 
 namespace dotnet_integration_kit
 {
-    
-
     public class AppInstance
     {
         private AppInstance.AFConfig config;
@@ -25,7 +16,6 @@ namespace dotnet_integration_kit
             this.config = config;
             this.microModuleId = microModuleId;
         }
-
 
         private string encrypt(string data, string secret)
         {
@@ -41,10 +31,9 @@ namespace dotnet_integration_kit
         {
             dynamic obj = JsonConvert.DeserializeObject(Jose.JWT.Decode(token, Encoding.ASCII.GetBytes(secret), JwsAlgorithm.HS256));
             return JsonConvert.SerializeObject(obj.af_claim);
-
         }
 
-        public void exec(string intent, object intentData, string userID, Action<object> callback)
+        public void exec(string intent, object intentData, string userID, Action<object,object> callback)
         {
             var obj = ((object)new
             {
@@ -53,10 +42,7 @@ namespace dotnet_integration_kit
             });
             HttpClient client = new HttpClient();
 
-
             string token = null;
-
-
             client.DefaultRequestHeaders.Add("x-uuid", userID);
             client.DefaultRequestHeaders.Add("x-module-handle", this.microModuleId);
             client.DefaultRequestHeaders.Add("x-app-key", this.config.appKey);
@@ -82,17 +68,17 @@ namespace dotnet_integration_kit
                     if (config.secretKey != null)
                     {
                         string result = message.Content.ReadAsStringAsync().Result;
-                        callback(JsonConvert.DeserializeObject(decrypt(result, config.secretKey)));
+                        callback(null,JsonConvert.DeserializeObject(decrypt(result, config.secretKey)));
                     }
                     else
                     {
                         string result = message.Content.ReadAsStringAsync().Result;
-                        callback(JsonConvert.DeserializeObject(result));
+                        callback(null,JsonConvert.DeserializeObject(result));
                     }
                 }
                 else
                 {
-                    callback(null);
+                    callback(JsonConvert.DeserializeObject(requestTask.Result.Content.ReadAsStringAsync().Result),null);
                 }
             });
             respose.Wait();
@@ -108,14 +94,12 @@ namespace dotnet_integration_kit
             });
             HttpClient client = new HttpClient();
 
-
             string token = null;
-
 
             client.DefaultRequestHeaders.Add("x-uuid", userID);
             client.DefaultRequestHeaders.Add("x-module-handle", this.microModuleId);
             client.DefaultRequestHeaders.Add("x-app-key", this.config.appKey);
-            System.Net.Http.HttpContent content;
+            HttpContent content;
             if (config.secretKey != null)
             {
                 token = encrypt(JsonConvert.SerializeObject(obj), config.secretKey);
@@ -132,9 +116,6 @@ namespace dotnet_integration_kit
 
             HttpResponseMessage messge = client.PostAsync(new Uri(this.config.repoUrl + "/executor/exec"), content).Result;
 
-
-
-
             if (messge.IsSuccessStatusCode)
             {
                 if (config.secretKey != null) {
@@ -147,7 +128,7 @@ namespace dotnet_integration_kit
                 }
             }
             else{
-                return null;
+                return JsonConvert.DeserializeObject(messge.Content.ReadAsStringAsync().Result);
             }
 
         }
@@ -155,11 +136,8 @@ namespace dotnet_integration_kit
         public class AFConfig
         {
             public string repoUrl { get; set; }
-
             public string secretKey { get; set; }
-
             public string appKey { get; set; }
-
             public AFConfig(string repoUrl, string secretKey, string appKey)
             {
                 this.repoUrl = repoUrl;

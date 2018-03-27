@@ -4609,23 +4609,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/karthik/.nuget/packages/": {},
+    "/Users/mohitbhansali/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/dotnet-integration-kit-sample.csproj",
+      "projectUniqueName": "/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/dotnet-integration-kit-sample.csproj",
       "projectName": "dotnet-integration-kit-sample",
-      "projectPath": "/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/dotnet-integration-kit-sample.csproj",
-      "packagesPath": "/Users/karthik/.nuget/packages/",
-      "outputPath": "/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit-sample/obj",
+      "projectPath": "/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/dotnet-integration-kit-sample.csproj",
+      "packagesPath": "/Users/mohitbhansali/.nuget/packages/",
+      "outputPath": "/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit-sample/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/karthik/.config/NuGet/NuGet.Config"
+        "/Users/mohitbhansali/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -4636,8 +4636,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/dotnet-integration-kit.csproj": {
-              "projectPath": "/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/dotnet-integration-kit.csproj"
+            "/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/dotnet-integration-kit.csproj": {
+              "projectPath": "/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/dotnet-integration-kit.csproj"
             }
           }
         }

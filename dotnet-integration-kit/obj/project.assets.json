@@ -4104,23 +4104,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/karthik/.nuget/packages/": {},
+    "/Users/mohitbhansali/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/dotnet-integration-kit.csproj",
+      "projectUniqueName": "/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/dotnet-integration-kit.csproj",
       "projectName": "dotnet-integration-kit",
-      "projectPath": "/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/dotnet-integration-kit.csproj",
-      "packagesPath": "/Users/karthik/.nuget/packages/",
-      "outputPath": "/Users/karthik/Projects/dotnet-integration-kit/dotnet-integration-kit/obj",
+      "projectPath": "/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/dotnet-integration-kit.csproj",
+      "packagesPath": "/Users/mohitbhansali/.nuget/packages/",
+      "outputPath": "/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/karthik/.config/NuGet/NuGet.Config"
+        "/Users/mohitbhansali/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
