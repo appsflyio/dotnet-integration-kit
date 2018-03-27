@@ -3,11 +3,13 @@
 
 
 using Newtonsoft.Json;
-using RestSharp;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Jose;
+using System.Net.Http;
+using System.Net.Http.Headers;
+
 
 namespace dotnet_integration_kit
 {
@@ -46,56 +48,85 @@ namespace dotnet_integration_kit
                 intent = intent,
                 data = intentData
             });
-            Console.WriteLine(this.config.repoUrl + "/executor/exec");
-            RestClient restClient = new RestClient(this.config.repoUrl + "/executor/exec");
-            RestRequest restRequest = new RestRequest(Method.POST);
+            HttpClient client = new HttpClient();
+
+
             string token = null;
+
+
+            client.DefaultRequestHeaders.Add("x-uuid", userID);
+            client.DefaultRequestHeaders.Add("x-module-handle", this.microModuleId);
+            client.DefaultRequestHeaders.Add("x-app-key", this.config.appKey);
+            System.Net.Http.HttpContent content;
             if (config.secretKey != null)
             {
                 token = encrypt(JsonConvert.SerializeObject(obj), config.secretKey);
-                restRequest.AddParameter("text/plain", (object)token, ParameterType.RequestBody);
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("text/plain"));
+                content = new StringContent(token, Encoding.UTF8, "text/plain");
             }
             else
             {
                 token = JsonConvert.SerializeObject(obj);
-                restRequest.AddParameter("application/json", (object)token, ParameterType.RequestBody);
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                content = new StringContent(token, Encoding.UTF8, "application/json");
             }
-            restRequest.AddHeader("x-uuid", userID);
-            restRequest.AddHeader("x-module-handle", this.microModuleId);
-            restRequest.AddHeader("x-app-key", this.config.appKey);
+            client.PostAsync(new Uri(this.config.repoUrl + "/executor/exec"), content).ContinueWith((requestTask) =>
+            {
+                HttpResponseMessage message = requestTask.Result;
+                if (message.IsSuccessStatusCode)
+                {
+                    string result = message.Content.ReadAsStringAsync().Result;
+                    callback(result);
 
-            restClient.ExecuteAsync(restRequest, response => {
-                callback(response.Content);
+                }
+                else
+                {
+                    callback(null);
+                }
             });
         }
 
-        public string execSync(string intent, JsonToken intentData, string userID, Action<string> callback)
+
+        public string execSync(string intent, object intentData, string userID, Action<string> callback)
         {
             var obj = ((object)new
             {
                 intent = intent,
                 data = intentData
             });
-            Console.WriteLine(this.config.repoUrl + "/executor/exec");
-            RestClient restClient = new RestClient(this.config.repoUrl + "/executor/exec");
-            RestRequest restRequest = new RestRequest(Method.POST);
+            HttpClient client = new HttpClient();
+
+
             string token = null;
+
+
+            client.DefaultRequestHeaders.Add("x-uuid", userID);
+            client.DefaultRequestHeaders.Add("x-module-handle", this.microModuleId);
+            client.DefaultRequestHeaders.Add("x-app-key", this.config.appKey);
+            System.Net.Http.HttpContent content;
             if (config.secretKey != null)
             {
                 token = encrypt(JsonConvert.SerializeObject(obj), config.secretKey);
-                restRequest.AddParameter("text/plain", (object)token, ParameterType.RequestBody);
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("text/plain"));
+                content = new StringContent(token, Encoding.UTF8, "text/plain");
             }
             else
             {
                 token = JsonConvert.SerializeObject(obj);
-                restRequest.AddParameter("application/json", (object)token, ParameterType.RequestBody);
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                content = new StringContent(token, Encoding.UTF8, "application/json");
             }
-            restRequest.AddHeader("x-uuid", userID);
-            restRequest.AddHeader("x-module-handle", this.microModuleId);
-            restRequest.AddHeader("x-app-key", this.config.appKey);
 
-            var response = restClient.Execute(restRequest);
-            return response.Content;
+            HttpResponseMessage messge = client.PostAsync(new Uri(this.config.repoUrl + "/executor/exec"), content).Result;
+            if (messge.IsSuccessStatusCode)
+            {
+                string result = messge.Content.ReadAsStringAsync().Result;
+                return result;
+            }
+            else{
+                return null;
+            }
+
         }
 
         public class AFConfig
