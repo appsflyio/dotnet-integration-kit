@@ -1,0 +1,8 @@
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/bin/Release/netstandard2.0/dotnet-integration-kit.deps.json
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/bin/Release/netstandard2.0/dotnet-integration-kit.dll
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/bin/Release/netstandard2.0/dotnet-integration-kit.pdb
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/obj/Release/netstandard2.0/dotnet-integration-kit.csproj.CoreCompileInputs.cache
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/obj/Release/netstandard2.0/dotnet-integration-kit.AssemblyInfoInputs.cache
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/obj/Release/netstandard2.0/dotnet-integration-kit.AssemblyInfo.cs
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/obj/Release/netstandard2.0/dotnet-integration-kit.dll
+/Users/mohitbhansali/Documents/www/dotnet-integration-kit/dotnet-integration-kit/obj/Release/netstandard2.0/dotnet-integration-kit.pdb
