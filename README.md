@@ -95,4 +95,4 @@ Covert the above JSON to string and append it to key "af_claim" as follows:
 ----------------------------------------
 
 ### Micro Service Response
-Response format will be dependent on microservice. Please go through [this documentation](https://github.com/appsflyio/micro-module-documentations) for different microservices.
+The response of the microservices is encrypted and you will be needing JWT decode or verify with the secret key to decode the response. After decode, the response is in "af_claim" key. Please go through [this documentation](https://github.com/appsflyio/micro-module-documentations) for different microservices.
